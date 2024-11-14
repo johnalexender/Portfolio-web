@@ -1,0 +1,79 @@
+ {% extends "base.html" %}
+ {% block content %}
+ {% load static %}
+              <!--Home Page-->
+              <div class="frame-4">
+                <div class="frame-5">
+                  <div class="frame-6">
+                    <div class="frame-7">
+                      <div class="frame-8">
+                        <div class="frame-9">
+                          <div class="text-wrapper-5">Hi I am</div> 
+                          <div class="text-wrapper-6">{{User_Name | upper}}</div> <!--#variable interpresion syntex--><!--using filter also upper words it filter-->
+                        </div>
+                        <div class="text-wrapper-7">{{job_title}}</div><!--#variable interpresion syntex-->
+                      </div>
+                      <div class="frame-10">
+                        <div class="frame-11">
+                          <div class="ellipse"></div>
+                          <img
+                            class="img"
+                            src="{% static 'assets/img/mdi_instagram.png' %}"
+                          />
+                        </div>
+                        <div class="frame-11">
+                          <div class="ellipse"></div>
+                          <img
+                            class="img"
+                            src="{% static 'assets/img/mingcute_linkedin-line.png'%}"
+                          />
+                        </div>
+                        <div class="frame-11">
+                          <div class="ellipse"></div>
+                          <img
+                            class="img"
+                            src="{% static 'assets/img/frame-95.png'%}"
+                          />
+                        </div>
+                        <div class="frame-11">
+                          <div class="ellipse"></div>
+                          <img
+                            class="img"
+                            src="{% static 'assets/img/ri_behance-line.png'%}"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="frame-13">
+                      <div class="div-wrapper">
+                        <div class="text-wrapper-8">Hire Me</div>
+                      </div>
+                      <div class="frame-14">
+                        <div class="text-wrapper-9">Downlead CV</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="frame-15">
+                    <div class="frame-16">
+                      <div class="text-wrapper-10">{{experiences_yr}}</div><!--#variable interpresion syntex-->
+                      <div class="text-wrapper-11">{{Completes_project}}</div><!--#variable interpresion syntex-->
+                    </div>
+                    <div class="frame-17">
+                      <div class="text-wrapper-10">5+</div>
+                      <div class="text-wrapper-11">Project done</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- photo-->
+                <div class="photo">
+                  <div class="overlap-group">
+                    <div class="ellipse-2"></div>
+                    <img
+                      class="man-in-black-suit"
+                      src="{% static 'assets\img\Man in black suit looking confident.png'%}"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>      
+  {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<!--portfolio page-->
+<div class="frame-18">
+  <div class="frame-19">
+    <div class="text-wrapper-12">Portfolio</div>
+    <div class="frame-13">
+      <div class="frame-20">
+        <div class="text-wrapper-13">All</div>
+      </div>
+      <div class="frame-21">
+        <div class="text-wrapper-14">Website Design</div>
+      </div>
+      <div class="frame-21">
+        <div class="text-wrapper-14">App Mobile Design</div>
+      </div>
+      <div class="frame-21">
+        <div class="text-wrapper-14">App Desktop</div>
+      </div>
+      <div class="frame-21">
+        <div class="text-wrapper-14">Braiding</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frame-22">
+    <!--if using to check any post here then show-->
+    {% if Design_post %} {% for design in Design_post%}<!--for tage s use create the post just tag method-->
+    <div class="frame-23">
+      <a href="{% url 'New_design_details' Design_post_id=design.id %}">
+        <img
+          src="{% static 'assets/img/footprint.png' %}"
+          alt="Footprint Image"
+        />
+      </a>
+
+      <div class="frame-24">
+        <div class="text-wrapper-14">{{design.design_title}}</div>
+        <!--for tage s use create the post just tag method-->
+        <div class="text-wrapper-15">{{design.design_catagories}}</div>
+        <!--for tage s use create the post just tag method-->
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <div class="text-wrapper-14">No post available</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

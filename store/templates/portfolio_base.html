@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>{{page_title | default:"Documents"}}</title>
+  </head>
+  <body>
+    <!--Menu bar-->
+    <div class="desktop">
+      <div class="overlap-wrapper">
+        <div class="overlap">
+          <div class="frame">
+            <div class="div">
+              <!--header menu bar -->
+              <section class="portfolio-section">
+                <header class="header">
+                  <h1 class="logo">BMASFAQ</h1>
+                  <nav class="nav-menu">
+                    <a href="{% url 'desktophome' %}" class="nav-item">Home</a>
+                    <a href="#" class="nav-item-active">Portfolio</a>
+                    <a href="#" class="nav-item">About me</a>
+                    <a href="#" class="nav-item">Contact me</a>
+                  </nav>
+                  <button class="cta-button">Hire Me</button>
+                </header>
+              </section>
+              <!--Content Page-->
+              {% block content %} 
+              {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>{{page_title | default:"Documents"}}</title>
+  </head>
+  <body>
+    <!--Menu bar-->
+    <div class="desktop">
+      <div class="overlap-wrapper">
+        <div class="overlap">
+          <div class="frame">
+            <div class="div">
+              <!--header menu bar -->
+              {% include "includes/header.html" %}
+              <!--Content Page-->
+              {% block content %} 
+              {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+ 
