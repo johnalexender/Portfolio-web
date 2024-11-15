@@ -4,20 +4,37 @@
   <div class="frame-19">
     <div class="text-wrapper-12">Portfolio</div>
     <div class="frame-13">
+      <!-- Category Selection -->
       <div class="frame-20">
-        <div class="text-wrapper-13">All</div>
+        <a href="{% url 'portfolio' %}" class="category-button">All</a>
       </div>
       <div class="frame-21">
-        <div class="text-wrapper-14">Website Design</div>
+        <a
+          href="{% url 'portfolio_by_category' category='Website Design' %}"
+          class="category-button"
+          >Website Design</a
+        >
       </div>
       <div class="frame-21">
-        <div class="text-wrapper-14">App Mobile Design</div>
+        <a
+          href="{% url 'portfolio_by_category' category='Mobile App Design' %}"
+          class="category-button"
+          >Mobile App Design</a
+        >
       </div>
       <div class="frame-21">
-        <div class="text-wrapper-14">App Desktop</div>
+        <a
+          href="{% url 'portfolio_by_category' category='App Desktop' %}"
+          class="category-button"
+          >App Desktop</a
+        >
       </div>
       <div class="frame-21">
-        <div class="text-wrapper-14">Braiding</div>
+        <a
+          href="{% url 'portfolio_by_category' category='Braiding' %}"
+          class="category-button"
+          >Braiding</a
+        >
       </div>
     </div>
   </div>

@@ -10,16 +10,74 @@
     --foundation-whitedarker: rgba(87, 87, 87, 1);
 }
 .desktop {
-    background-color: #121212;
-    display: flex;
-    justify-content: center;
+     /* Basic dimensions and centering */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ /* From Uiverse.io by marcelodolza */ 
+    --s: 100px; /* control the size */
+    --c1: #1f1f1e;
+    --c2: #000000;
+  
+    --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
+      var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
+      var(--c1) 76% 86%, var(--c2) 86% 96%;
+    background: radial-gradient(
+        100% 100% at 100% 0,
+        var(--c1) 4%,
+        var(--_g),
+        #0008 96%,
+        #0000
+      ),
+      radial-gradient(
+          100% 100% at 0 100%,
+          #0000,
+          #0008 4%,
+          var(--_g),
+          var(--c1) 96%
+        )
+        var(--c1);
+    background-size: var(--s) var(--s);
+  
 }
 
 .desktop .overlap-wrapper {
-    background-color: #121212;
-    width: 100%;
-    max-width: 1280px;
-    height: 1400px; /* Adjust to content height */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  height: 1400px; /* Adjust to content height */
+
+ /* From Uiverse.io by marcelodolza */ 
+    --s: 100px; /* control the size */
+    --c1: #1f1f1e;
+    --c2: #111111;
+  
+    --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
+      var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
+      var(--c1) 76% 86%, var(--c2) 86% 96%;
+    background: radial-gradient(
+        100% 100% at 100% 0,
+        var(--c1) 4%,
+        var(--_g),
+        #0008 96%,
+        #0000
+      ),
+      radial-gradient(
+          100% 100% at 0 100%,
+          #0000,
+          #0008 4%,
+          var(--_g),
+          var(--c1) 96%
+        )
+        var(--c1);
+    background-size: var(--s) var(--s);
+
+  
+   
 }
 
 .desktop .overlap {
@@ -38,54 +96,75 @@
     box-sizing: border-box;
     padding-bottom: 8px;
 }
+@media (max-width: 768px) {
+    .desktop {
+        padding: 15px;  /* Add more space on small screens */
+    }
 
-/*
-.desktop {
-    background-color: #121212;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+    .desktop .overlap-wrapper {
+        flex-direction: column;  /* Stack elements vertically */
+        align-items: center;
+        height: auto;  /* Remove fixed height for smaller screens */
+    }
 
-.desktop .overlap-wrapper {
-    background-color: #121212;
-    width: 1280px;
-    height: 1400px;
-}
+    .desktop .frame-2 {
+        flex-direction: column;  /* Stack buttons vertically */
+        align-items: center;
+    }
 
-.desktop .overlap {
-    position: relative;
-    height: 5388px;
-    top: 10px;
-}
+    .category-button {
+        font-size: 0.9rem;  /* Smaller font size on mobile */
+        padding: 8px 15px;  /* Smaller padding on mobile */
+    }
 
-.desktop .frame {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    .desktop .overlap {
+        top: 0;  /* Remove unnecessary margin-top */
+    }
 }
+@media (max-width: 480px) {
+    .desktop {
+        padding: 10px;  /* Further reduce padding on very small screens */
+    }
 
-.desktop .div {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    position: relative;
-    flex: 0 0 auto;
-}
+    .desktop .frame-2 {
+        padding: 0;
+    }
 
-.desktop .frame-2 {
-    display: flex;
-    width: 1280px;
-    padding: 0px 80px;
-    justify-content: space-between;
-    align-items: center;
+    .category-button {
+        font-size: 0.8rem;  /* Even smaller font size on very small screens */
+        padding: 6px 12px;  /* Even smaller padding on mobile */
+    }
+
+    .desktop .overlap-wrapper {
+        padding: 0 20px;  /* Add padding for smaller screens */
+    }
 }
-*/
+@media (min-width: 1024px) {
+    .desktop {
+        padding: 30px;  /* Increased padding for large desktop screens */
+    }
+
+    .desktop .overlap-wrapper {
+        max-width: 1400px;  /* Wider layout on larger screens */
+    }
+
+    .desktop .frame-2 {
+        padding: 15px 30px;  /* Adjusted padding for larger screens */
+    }
+
+    .category-button {
+        font-size: 1.2rem;  /* Larger font size for desktop */
+        padding: 14px 28px;  /* Increased button size */
+    }
+
+    .desktop .overlap {
+        top: 30px;  /* Adjusting top position to look better on desktop */
+    }
+
+    .frame-20, .frame-21 {
+        font-size: 1rem;  /* Slightly larger text for category buttons */
+    }
+}
 .desktop .text-wrapper {
     text-align: justify;
     font-family: K2D;
@@ -101,41 +180,45 @@
 }
 
 .desktop .frame-3 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    position: relative;
-    flex: 0 0 auto;
+    align-self: stretch;
+    display: flex; 
+    min-width: 240px;
+    align-items: center; 
+    gap: 40px 60px; 
+    font-size: 20px; 
+    color: #959595; 
+    font-weight: 500; 
+    letter-spacing: 0.6px; 
+    justify-content: center; 
+    flex-wrap: wrap;
+    margin: auto 0;
 }
 
-.desktop .text-wrapper-2 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1.00px;
-    font-family: "Lato-Bold", Helvetica;
+/* Default styles for all nav links */
+.nav-link {
+    font-family: "Lato", Helvetica, sans-serif;
+    align-self: stretch;
     font-weight: 700;
-    color: var(--foundation-orangenormal);
-    font-size: 20px;
-    text-align: justify;
-    letter-spacing: 0.60px;
-    line-height: normal;
-    white-space: nowrap;
-}
-
-.desktop .text-wrapper-3 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1.00px;
-    font-family: "Lato-Medium", Helvetica;
-    font-weight: 500;
-    color: var(--foundation-whitedark-hover);
-    font-size: 20px;
-    text-align: justify;
-    letter-spacing: 0.60px;
-    line-height: normal;
-    white-space: nowrap;
-}
+    font-size: 18px;
+    color: #838282; /* Default text color */
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+  }
+  
+  /* Styles for the active link */
+  .nav-link.active {
+    color: #FA6E00; /* Active color */
+    font-weight: bold;
+    border-bottom: 2px solid #FA6E00; /* Optional: underline effect for active link */
+  }
+  
+  /* Hover effect */
+  .nav-link:hover {
+    color: #FA6E00; /* Change color on hover */
+  }
+  
 
 .desktop .div-wrapper {
     display: inline-flex;
@@ -148,15 +231,18 @@
     border-radius: 8px;
     background: linear-gradient(
         180deg,
-        rgb(253, 111, 0) 0%,
-        rgb(228, 100, 0) 100%
-    );
+        rgba(226, 158, 9, 0.822) 0%,
+        rgba(228, 108, 10, 0.973) 100%
+      ),
+      rgba(243, 90, 2, 0.849);
 }
+
 
 .desktop .text-wrapper-4 {
     position: relative;
     width: fit-content;
     margin-top: -1.00px;
+    text-decoration: none;
     font-family: "Lato-Bold", Helvetica;
     font-weight: 700;
     color: #ffffff;
@@ -181,6 +267,7 @@
      align-items: flex-start;
      gap: 100px;
      padding-top: 20px;
+     margin-left: 10px;
 }
 
 .desktop .frame-6 {
@@ -282,7 +369,7 @@
 }
 
 .desktop .ellipse {
-    position: relative;
+    position: absolute;
     width: 40px;
     height: 40px;
     background-color: #ffffff0a;
@@ -292,7 +379,6 @@
 }
 
 .desktop .img {
-    position:absolute;
     width: 24px;
     height: 24px;
     margin-top: 8px;
@@ -477,22 +563,6 @@
     white-space: nowrap;
 }
 
-.desktop .frame-20 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 40px;
-    position: relative;
-    flex: 0 0 auto;
-    border-radius: 8px;
-    background: linear-gradient(
-        180deg,
-        rgb(253, 111, 0) 0%,
-        rgb(228, 100, 0) 100%
-    );
-}
 
 .desktop .text-wrapper-13 {
     position: relative;
@@ -508,18 +578,47 @@
     white-space: nowrap;
 }
 
-.desktop .frame-21 {
+
+ /* Style for Category Buttons */
+ .category-button {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: white;
     gap: 10px;
     padding: 14px 40px;
     position: relative;
     flex: 0 0 auto;
     background-color: #ffffff14;
     border-radius: 8px;
-}
+  }
+  
+  /* Hover effect */
+  .category-button:hover {
+    background-color: #fd6f00;  /* Blue background on hover */
+    color: white;  /* White text on hover */
+    transform: scale(1.1);  /* Slightly enlarge the button */
+  }
+  
+  /* Active (clicked) button styles */
+  .category-button:active {
+    background-color: #fd6f00;  /* Darker blue on click */
+    transform: scale(1);  /* Reset the size on click */
+  }
+  
+  /* Selected Button Style (when a category is selected) */
+  .category-button.selected {
+    background-color: #fd6f00;  /* Dark blue background */
+    color: white;  /* White text */
+  }
+  
+  /* Optional: Style for the frame containers (optional) */
+  .desktop.frame-20, .frame-21 {
+    display: inline-block;
+    margin: 0 10px;
+  }
 
 .desktop .text-wrapper-14 {
     position: relative;
@@ -912,8 +1011,8 @@
     flex: 0 0 auto;
     width: 100%;
     max-width: 1280px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .desktop .frame-35 {
@@ -1117,4 +1216,27 @@
     letter-spacing: 0.48px;
     line-height: normal;
     white-space: nowrap;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #707070;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #ebe8e8;
+}
+select{
+    width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccbebe;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.13);
+  color: #ebe8e8;
+}
+textarea {
+  height: 110px;
+  resize: vertical;
 }

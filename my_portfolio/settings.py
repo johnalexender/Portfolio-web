@@ -28,8 +28,8 @@ DEBUG = True#chnage the debug value true to false
 
 #add the some host sever name 'localhost'
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1'
+     'localhost', '127.0.0.1'
+
 ]
 
 
@@ -82,7 +82,11 @@ WSGI_APPLICATION = 'my_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'myproject_db',
+        'USER': 'admin',
+        'PASSWORD': 'adminpassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -148,4 +152,10 @@ LOGGING ={
         "handlers":["console"],
         "level":"DEBUG",
     }
+}
+# Add message tags (optional, for custom styling in templates)
+MESSAGE_TAGS = {
+    'success': 'alert-success',
+    'error': 'alert-danger',
+    'info': 'alert-info',
 }

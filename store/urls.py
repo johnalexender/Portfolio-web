@@ -7,9 +7,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('home', views.desktophome, name='desktophome'),#path 1
     path('portfolio', views.portfolio, name='portfolio'),
+    path('portfolio/<str:category>/', views.portfolio, name='portfolio_by_category'),  # Path for category filtering
     path('about', views.about, name='about'),
     path('contact', views.contact, name='contact'),
     path('design/<str:Design_post_id>/', views.design_details, name='New_design_details'),
     path('new_url_view',views.new_url_view, name='new_page'),
     path('old_url_redirect',views.old_url_redirect, name='old_url'),
+    path('submit_contact_form/', views.submit_contact_form, name='submit_contact_form'),
+    path('download-cv/', views.download_cv, name='download_cv'),
 ]
