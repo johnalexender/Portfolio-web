@@ -14,6 +14,7 @@ handler404 = 'my_portfolio.views.custom_page_not_found'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('store/', include('store.urls')),
+    path('', include('pwa.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

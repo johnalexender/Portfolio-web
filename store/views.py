@@ -5,18 +5,55 @@ import logging
 from .models import ContactForm  # Import your model
 import os
 from django.conf import settings
+from django.templatetags.static import static
 
 
 
 # Create your views here.
 Design_post=[
-       {'id':1, 'design_title':'Footprint','design_catagories':'Mobile App Design'},
-       {'id':2,'design_title':'Pawsquad','design_catagories':'Mobile App Design'},
-       {'id':3,'design_title':'Sony Camera','design_catagories':'Mobile App Design'},
-       {'id':4,'design_title':'Gaming Web','design_catagories':'Website Design'},
-       {'id':5,'design_title':'Beach & Coastal Escapes','design_catagories':'Website Design'},
-       {'id':6,'design_title':'feature','design_catagories':'Website Design'},
+       {'id':1, 'design_title':'Footprint','design_catagories':'Mobile App Design','imageurl': static('assets/img/footprint.png'),
+        'imageurl2': static('assets/img/cover design.png'),'imageurl3': static('assets/img/cover design-2.png'),'imageurl4': static('assets/img/cover design-3.png'),'imageurl5': static('assets/img/cover design-1.png'),
+        'Overview':'Overview',
+        'OverviewP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat',
+        'Approach':'Approach',
+        'ApproachP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, nonpulvinar lorem felis nec erat.'},
+       
+       {'id':2,'design_title':'Pawsquad','design_catagories':'Mobile App Design','imageurl': static('assets/img/paw.png'),
+        'imageurl2': '','imageurl3': '','imageurl4': '','imageurl5': '',
+        'Overview':'Overview',
+        'OverviewP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat',
+        'Approach':'Approach',
+        'ApproachP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, nonpulvinar lorem felis nec erat.'},
+       
+       {'id':3,'design_title':'Sony Camera','design_catagories':'Mobile App Design','imageurl': static('assets/img/camera.png'),
+        'imageurl2': '','imageurl3': '','imageurl4': '','imageurl5': '',
+        'Overview':'Overview',
+        'OverviewP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat',
+        'Approach':'Approach',
+        'ApproachP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, nonpulvinar lorem felis nec erat.'},
+       
+       {'id':4,'design_title':'Gaming Web','design_catagories':'Website Design','imageurl': static('assets/img/game.png'),
+        'imageurl2':'','imageurl3': '','imageurl4': '','imageurl5': '',
+        'Overview':'Overview',
+        'OverviewP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat',
+        'Approach':'Approach',
+        'ApproachP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, nonpulvinar lorem felis nec erat.'},
+       
+       {'id':5,'design_title':'Beach & Coastal Escapes','design_catagories':'Website Design','imageurl': static('assets/img/beaches.png'),
+        'imageurl2': '','imageurl3': '','imageurl4': '','imageurl5': '',
+        'Overview':'Overview',
+        'OverviewP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat',
+        'Approach':'Approach',
+        'ApproachP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, nonpulvinar lorem felis nec erat.'},
+       
+       {'id':6,'design_title':'feature','design_catagories':'Website Design','imageurl': static('assets/img/footprint.png'),
+        'imageurl2': '','imageurl3': '','imageurl4': '','imageurl5': '',
+        'Overview':'Overview',
+        'OverviewP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat',
+        'Approach':'Approach',
+        'ApproachP':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nuncmaximus, nulla ut commodo sagittis, sapien dui mattis dui, nonpulvinar lorem felis nec erat.'},
     ]
+
 
 
 def desktophome(request):
@@ -47,7 +84,8 @@ def contact(request):
     return render (request,'contact.html',{})
 
 def design_details(request, Design_post_id):
-    post= next((item for item in Design_post if item['id']== int(Design_post_id)),None)
+    
+    post= next((item for item in Design_post if item['id'] == int(Design_post_id)),None)
     logger=logging.getLogger("TESTING")
     logger.debug(f'post variable is {post}')
     return render(request,'portfolio_details.html',{'post':post})
