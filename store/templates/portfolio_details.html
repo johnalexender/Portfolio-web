@@ -3,16 +3,17 @@
   <!--header menu bar -->
   {% include "includes/menubar.html" %}
   <!--Content Page-->
+
   <main class="main-content">
     <article class="project-details">
       <h2 class="project-category">Design Collection</h2>
-      <h3 class="project-title">PAW SQUAD</h3>
+      <h3 class="project-title">{{post.design_title}}</h3>
 
       <div class="main-image-container">
         <div class="main-image-wrapper">
           <div class="main-image">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/b15f7d0765b64c068ced062b78767983/9048df51100252c3515460d51389495c61e61cad5eccc11ffd69f39e6e7a8093?apiKey=b15f7d0765b64c068ced062b78767983&"
+              src="{{post.imageurl2}}"
               alt="Paw Squad main project image"
               class="project-image"
             />
@@ -24,21 +25,21 @@
         <div class="gallery-wrapper">
           <div class="gallery-item">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/b15f7d0765b64c068ced062b78767983/9214dca0ae9e7351afd1aeacabb798163a4417a51fb78e4edeb4ab6f6b9a5934?apiKey=b15f7d0765b64c068ced062b78767983&"
+              src="{{post.imageurl3}}"
               alt="Paw Squad gallery image 1"
               class="gallery-image"
             />
           </div>
           <div class="gallery-item">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/b15f7d0765b64c068ced062b78767983/2ef44da37f7d3965e2eff0d6e795080ec068713c8bb3f349d054062a37775693?apiKey=b15f7d0765b64c068ced062b78767983&"
+              src="{{post.imageurl4}}"
               alt="Paw Squad gallery image 2"
               class="gallery-image"
             />
           </div>
           <div class="gallery-item">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/b15f7d0765b64c068ced062b78767983/015e1e295103af4057a3ec2599dccd08425425063e74a9f5d3d8697ce5c668c9?apiKey=b15f7d0765b64c068ced062b78767983&"
+              src="{{post.imageurl5}}"
               alt="Paw Squad gallery image 3"
               class="gallery-image"
             />
@@ -47,21 +48,13 @@
       </div>
       <div class="content-container">
         <section class="project-overview">
-          <h4>Overview</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            maximus, nulla ut commodo sagittis, sapien dui mattis dui, non
-            pulvinar lorem felis nec erat.
-          </p>
+          <h4>{{post.Overview}}</h4>
+          <p>{{post.OverviewP}}</p>
         </section>
 
         <section class="project-approach">
-          <h4>Approach</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            maximus, nulla ut commodo sagittis, sapien dui mattis dui, non
-            pulvinar lorem felis nec erat.
-          </p>
+          <h4>{{post.Approach}}</h4>
+          <p>{{post.ApproachP}}</p>
         </section>
       </div>
     </article>

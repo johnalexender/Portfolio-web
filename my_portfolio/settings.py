@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'my_portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'myproject_db',
-        'USER': 'admin',
-        'PASSWORD': 'adminpassword',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'portfolio',
+        'USER': 'root',
+        'PASSWORD': 'Hajara23017#',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 
@@ -159,3 +159,47 @@ MESSAGE_TAGS = {
     'error': 'alert-danger',
     'info': 'alert-info',
 }
+
+PWA_APP_NAME = 'store'
+PWA_APP_DESCRIPTION = 'An amazing Django app with PWA features'
+PWA_APP_THEME_COLOR = '#000000'
+PWA_APP_BACKGROUND_COLOR = '#FFFFFF'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_START_URL = '/'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/icons/icon-72x72.png',
+        'sizes': '72x72'
+    },
+    {
+        'src': '/static/icons/icon-96x96.png',
+        'sizes': '96x96'
+    },
+    {
+        'src': '/static/icons/icon-128x128.png',
+        'sizes': '128x128'
+    },
+    {
+        'src': '/static/icons/icon-144x144.png',
+        'sizes': '144x144'
+    },
+    {
+        'src': '/static/icons/icon-152x152.png',
+        'sizes': '152x152'
+    },
+    {
+        'src': '/static/icons/icon-192x192.png',
+        'sizes': '192x192'
+    },
+    {
+        'src': '/static/icons/icon-384x384.png',
+        'sizes': '384x384'
+    },
+    {
+        'src': '/static/icons/icon-512x512.png',
+        'sizes': '512x512'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
